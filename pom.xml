@@ -25,7 +25,6 @@
 								<type>remote</type>
 							</container>
 							<configuration>
-								<wait>true</wait>
 								<container>
 									<containerId>tomcat7x</containerId>
 									<!-- Ubicacion del contenedor -->
@@ -82,7 +81,6 @@
 						<artifactId>cargo-maven2-plugin</artifactId>
 						<version>1.4.18</version>
 						<configuration>
-							<wait>true</wait>
 							<container>
 								<!-- Servidor a emplear, en este caso Tomcat 7 -->
 								<containerId>tomcat7x</containerId>
