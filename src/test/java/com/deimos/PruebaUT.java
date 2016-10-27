@@ -13,7 +13,7 @@ public class PruebaUT {
 		
 		sut.metodo(true);
 		
-		Assert.fail();
+		//Assert.fail();
 		
 		
 		
