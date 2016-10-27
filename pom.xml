@@ -53,12 +53,14 @@
 						</configuration>
 						<executions>
 							<execution>
+								<id>pre-integration-tes</id>
 								<phase>pre-integration-test</phase>
 								<goals>
 									<goal>start</goal>
 								</goals>
 							</execution>
 							<execution>
+								<id>post-integration-test</id>
 								<phase>post-integration-test</phase>
 								<goals>
 									<goal>stop</goal>
@@ -114,14 +116,6 @@
 								</deployables>
 							</configuration>
 						</configuration>
-						<executions>
-							<execution>
-								<phase>deploy</phase>
-								<goals>
-									<goal>start</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
