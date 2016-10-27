@@ -19,47 +19,39 @@
 						<configuration>
 							<wait>true</wait>
 							<container>
-								<!-- Servidor a emplear, en este caso Tomcat 7 -->
 								<containerId>tomcat7x</containerId>
-								<!-- Tipo de servidor, en este caso un servidor remoto -->
-								<type>remote</type>
+								  <!-- Ubicacion del contenedor -->
+								<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
+								<type>installed</type>
 							</container>
 							<configuration>
-								<container>
-									<containerId>tomcat7x</containerId>
-									<!-- Ubicacion del contenedor -->
-									<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
-									<type>installed</type>
-								</container>
-								<configuration>
-									<type>existing</type>
-									<!-- Ubicacion a partir de la cual se creará la configuración de 
-										despliegue -->
-									<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
-									<properties>
-										<cargo.servlet.port>8081</cargo.servlet.port>
-									</properties>
-								</configuration>
-								<deployables>
-									<deployable>
-										<groupId>com.deimos</groupId>
-										<artifactId>ProyectoFinal</artifactId>
-										<type>war</type>
-										<pingURL>http://localhost:8081/ProyectoFinal/index.html</pingURL>
-									</deployable>
-								</deployables>
+								<type>existing</type>
+								  <!-- Ubicacion a partir de la cual se creará la configuración de 
+									despliegue -->
+								<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
+								<properties>
+									<cargo.servlet.port>8082</cargo.servlet.port>
+								</properties>
 							</configuration>
+							<deployables>
+								<deployable>
+									<groupId>com.deimos</groupId>
+									<artifactId>ProyectoFinal</artifactId>
+									<type>war</type>
+									<pingURL>http://localhost:8080/ProyectoFinal/index.html</pingURL>
+								</deployable>
+							</deployables>
 						</configuration>
 						<executions>
 							<execution>
-								<id>pre-integration-tes</id>
+								<id>arrancar-servidor</id>
 								<phase>pre-integration-test</phase>
 								<goals>
 									<goal>start</goal>
 								</goals>
 							</execution>
 							<execution>
-								<id>post-integration-test</id>
+								<id>parar-servidor</id>
 								<phase>post-integration-test</phase>
 								<goals>
 									<goal>stop</goal>
@@ -81,39 +73,47 @@
 						<artifactId>cargo-maven2-plugin</artifactId>
 						<version>1.4.18</version>
 						<configuration>
+							<wait>true</wait>
 							<container>
-								<!-- Servidor a emplear, en este caso Tomcat 7 -->
 								<containerId>tomcat7x</containerId>
-								<!-- Tipo de servidor, en este caso un servidor remoto -->
-								<type>remote</type>
+								  <!-- Ubicacion del contenedor -->
+								<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
+								<type>installed</type>
 							</container>
 							<configuration>
-								<wait>true</wait>
-								<container>
-									<containerId>tomcat7x</containerId>
-									<!-- Ubicacion del contenedor -->
-									<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
-									<type>installed</type>
-								</container>
-								<configuration>
-									<type>existing</type>
-									<!-- Ubicacion a partir de la cual se creará la configuración de 
-										despliegue -->
-									<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
-									<properties>
-										<cargo.servlet.port>8081</cargo.servlet.port>
-									</properties>
-								</configuration>
-								<deployables>
-									<deployable>
-										<groupId>com.deimos</groupId>
-										<artifactId>ProyectoFinal</artifactId>
-										<type>war</type>
-										<pingURL>http://localhost:8081/ProyectoFinal/index.html</pingURL>
-									</deployable>
-								</deployables>
+								<type>existing</type>
+								  <!-- Ubicacion a partir de la cual se creará la configuración de 
+									despliegue -->
+								<home>C:\Users\curso\Ecosistema\apache-tomcat-7.0.72</home>
+								<properties>
+									<cargo.servlet.port>8082</cargo.servlet.port>
+								</properties>
 							</configuration>
+							<deployables>
+								<deployable>
+									<groupId>com.deimos</groupId>
+									<artifactId>ProyectoFinal</artifactId>
+									<type>war</type>
+									<pingURL>http://localhost:8080/ProyectoFinal/index.html</pingURL>
+								</deployable>
+							</deployables>
 						</configuration>
+						<executions>
+							<execution>
+								<id>arrancar-servidor</id>
+								<phase>pre-integration-test</phase>
+								<goals>
+									<goal>start</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>parar-servidor</id>
+								<phase>post-integration-test</phase>
+								<goals>
+									<goal>stop</goal>
+								</goals>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
