@@ -13,7 +13,10 @@ public class Negocio {
 	 */
 	public void metodo(boolean dato) {
 		if(dato){
-			System.out.println("True");
+			String a = "";
+			
+			a = a + "";
+			
 		} else {
 			System.out.println("False");
 		}

@@ -1,0 +1,5 @@
+projectKey=com.deimos:ProyectoFinal
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/com.deimos:ProyectoFinal
+ceTaskId=AVgKhP0NhGQHdiSoPcS9
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVgKhP0NhGQHdiSoPcS9
